@@ -2,7 +2,7 @@
 
 A small PHP Feature Flag library.
 
-`composer require danc0/buoy`
+`composer require dvnc0/buoy`
 
 ## Usage
 
