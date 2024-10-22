@@ -51,7 +51,7 @@ class Buoy {
 	 * @param array $settings The settings of Buoy
 	 * @return Buoy
 	 */
-	public static function init(array $settings): Buoy {
+	public static function init(array $settings = []): Buoy {
 		if (NULL === static::$instance) {
 			static::$instance = new self($settings);
 		}
@@ -103,7 +103,7 @@ class Buoy {
 	 * @param array  $args             The arguments needed for the validator if any
 	 * @return bool
 	 */
-	public function access(string $feature_key_name, array $args): bool {
+	public function access(string $feature_key_name, array $args = []): bool {
 		$feature = $this->settings['features'][$feature_key_name] ?? NULL;
 
 		if (NULL === $feature) {
