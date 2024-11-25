@@ -62,10 +62,10 @@ class Buoy {
 	 * Register a feature
 	 *
 	 * @param string                $feature_key       The key of the feature
-	 * @param callable|array|object $feature_validator The validator of the feature
+	 * @param callable|object $feature_validator The validator of the feature
 	 * @return void
 	 */
-	public static function register(string $feature_key, callable|array|object $feature_validator): void {
+	public static function register(string $feature_key, callable|object $feature_validator): void {
 		if (NULL === static::$instance) {
 			throw new Buoy_Exception('Buoy instance not initialized.');
 		}
@@ -115,10 +115,6 @@ class Buoy {
 		}
 
 		if (is_callable($feature)) {
-			return $feature(...$args);
-		}
-
-		if (is_object($feature) && method_exists($feature, '__invoke')) {
 			return $feature(...$args);
 		}
 

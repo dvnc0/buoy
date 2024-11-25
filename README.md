@@ -18,11 +18,11 @@ Buoy::register('feature', function() {
 Buoy::can()->access('feature'); // true
 ```
 
-This also includes a probablity function:
+This also includes a probability function:
 
 ```php
 Buoy::lotto(50); // true 50% of the time
 ```
 
 ### Feature Validators
-The register method can take callables, objects that use the `__invoke` magic method, or a class that implements the `Buoy\Feature_Validator` interface.
+The register method can take a callable or a class that implements the `Buoy\Feature_Validator` interface.
